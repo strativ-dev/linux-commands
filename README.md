@@ -10,6 +10,17 @@ To use the commands in windows you have to install Linux sub-system or use third
 whoami
 ```
 ---
+##### Which
+```bash
+which <command>
+```
+---
+##### Get linux version
+```bash
+cat  cat /etc/os-release
+lsb_release -a
+```
+---
 ##### Get suggession
 ```bash
 who *Press Tab*
@@ -166,7 +177,6 @@ Quit - q
 Search - /
 G - Go the end of the file
 g - Go to the start of the file
-> Need fore content
 
 ---
 ##### Print text in terminal
@@ -217,8 +227,6 @@ touch {a,b,c}.py # Expanding
 
 echo {1..99} # Range expanding
 ```
-> How to updated path and details
-
 ---
 ##### Difference between two files
 ```bash
@@ -277,7 +285,9 @@ du -h | sort -h # Sorting folder based on disk usage
 ```
 history
 
-!<history id>
+history -c # Clean history
+
+!<history>
 ```
 ---
 ##### PS (Process status)
@@ -293,6 +303,8 @@ ps axww | grep bash
 top
 
 top -o %MEM # Sort via field
+
+htop
 ```
 ---
 ##### Kill process
@@ -313,9 +325,9 @@ killall -9/15 <name>
 
  jobs # See list of jobs
 
- bg <job id> # Run job in background
+ bg <job> # Run job in background
 
- fg <job id> # Run job in foreground
+ fg <job> # Run job in foreground
 
  sleep 120 & # Another way of running bg job
 ```
@@ -324,22 +336,24 @@ killall -9/15 <name>
 ```
 gzip <filename>
 
-gzip -c <filename> > <name.gz>  # Keep the original file
+gzip -c <filename> > <name>  # Keep the original file
 
 gzip -k[v] <filename>  # Keep the original file
 
-gzip -d <filename.gz> # Unzip
+zcat <compressed> # show compressed file
 
-gunzip <filename.gz> # Unzip
+gzip -d <filename> # Unzip
+
+gunzip <filename> # Unzip
 ```
 ---
 ##### TAR
 ```
-tar -c[z]f <archivename.tar> <file1> <file2> # c for create, f for name, z for compressing
+tar -c[z]f <archivename> <file1> <file2> # c for create, f for name, z for compressing
 
-tar -tf <archive.tar> # See files inside
+tar -tf <archive> # See files inside
 
-tar -xf <archive.tar> -C <directory> # Extract to a specific folder
+tar -xf <archive> -C <directory> # Extract to a specific folder
 ```
 ---
 ##### Nano
@@ -361,10 +375,10 @@ Ctrl + \ : Find and replace
 ```bash
 alias ll='ls -l'
 
+unalias <alias>
+
 ```
 Write in .bashrc or .zshrc
--> Need more about alias
-
 ---
 ##### Xargs
 ```bash
@@ -403,11 +417,11 @@ passwd
 ---
 ##### Change ownership
 ```bash
-sudo chown <user> <file/folder>
+sudo chown <user> <file>
 
 chown -r <user> <folder> # Recursively
 
-chown <user>:<group> <file/folder>
+chown <user>:<group> <file>
 ```
 ---
 ##### Groups
@@ -459,5 +473,48 @@ chmod 755 <file>
 ```
 
 ---
+##### Make Executable 
+```bash
+./<file>
+
+chmod +x <file> # to make executable
+```
+##### Wget
+```bash
+wget <url>
+```
+##### Tree
+```bash
+tree
+
+tree -f # Full path
+```
+##### Time to run a command
+```bash
+time <command>
+```
+##### Host
+```bash
+host <domain>
+```
+##### Add user
+```bash
+sudo useradd [-m] <username>
+sudo passwd <username>
+
+```
+##### Add groups
+```bash
+sudo groupadd <group>
+
+```
+##### Modify user groups
+```bash
+sudo usermod -a -G <group> <user> # add user in group
+sudo gpasswd -d <user> <group> # remove user from group
+
+```
+
+
 
 Download the linux manual from [here](https://itbook.store/books/1001614175565)
