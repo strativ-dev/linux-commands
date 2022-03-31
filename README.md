@@ -17,7 +17,7 @@ which <command>
 ---
 ##### Get linux version
 ```bash
-cat  cat /etc/os-release
+cat /etc/os-release
 lsb_release -a
 ```
 ---
